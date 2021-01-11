@@ -47,6 +47,12 @@ function unlockPage(url) {
     script += `document.querySelector('div[class^="sp_veil"]').remove();`;
   }
 
+  // Weather.com
+  if (url.indexOf("https://weather.com/") > -1) {
+    script += `document.querySelector('div[class^="sp_message"]').remove();`;
+    script += `document.querySelector('div[class^="sp_veil"]').remove();`;
+  }
+
   chrome.tabs.executeScript({
     code: script,
   });
