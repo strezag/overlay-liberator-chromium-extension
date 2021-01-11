@@ -11,6 +11,7 @@ Removes style definitions that are commonly used to display a paywall.
   - https://www.nytimes.com
   - https://www.washingtonpost.com
   - https://www.usatoday.com
+  - https://weather.com
 
 <br/>
 
