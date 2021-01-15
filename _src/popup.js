@@ -48,9 +48,15 @@ function unlockPage(url) {
   }
 
   // Weather.com
-  if (url.indexOf("https://weather.com/") > -1) {
+  if (url.indexOf("https://weather.com") > -1) {
     script += `document.querySelector('div[class^="sp_message"]').remove();`;
     script += `document.querySelector('div[class^="sp_veil"]').remove();`;
+  }
+
+  // DailyMail
+  if (url.indexOf("https://www.dailymail.co.uk") > -1) {
+    script += `document.querySelector('div[class^="overlay-34_Kj"]').remove();`;
+    script += `document.querySelector('div[class^="wrapper-3AzfF"]').remove();`;
   }
 
   chrome.tabs.executeScript({
