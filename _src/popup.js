@@ -59,6 +59,17 @@ function unlockPage(url) {
     script += `document.querySelector('div[class^="wrapper-3AzfF"]').remove();`;
   }
 
+  // WesternJournal
+  if (url.indexOf("https://www.westernjournal.com/") > -1) {
+    script += `document.querySelector('div[class^="fEy1Z2XT"]').remove();`;
+  }
+
+    // OpenAir
+    if (url.indexOf("openair.com") > -1) {
+      script += `document.querySelector('div[class^="lockOverlay"]').remove();`;
+      script += `document.querySelector('div[class^="lockOutsideEnvelope"]').remove();`;
+    }
+
   chrome.tabs.executeScript({
     code: script,
   });
