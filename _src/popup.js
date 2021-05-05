@@ -64,6 +64,28 @@ function unlockPage(url) {
     script += `document.querySelector('div[class^="fEy1Z2XT"]').remove();`;
   }
 
+  // DallasNews
+  if (url.indexOf("https://www.dallasnews.com") > -1) {
+    script += `document.querySelector('div[id^="courier-iframe"]').remove();`;
+    script += `document.querySelector('div[id^="courier-body-wrapper"]').style="position:inherit;";`;
+  }
+
+  // LA Times
+  if (url.indexOf("https://www.latimes.com/") > -1) {
+    script += `document.querySelector('div[class^="fc-dialog-overlay"]').remove();`;
+    script += `document.querySelector('div[class^="fc-dialog-container"]').remove();`;
+    script += `document.querySelector('div[class^="fc-ab-root"]').remove();`;
+    script += `document.querySelector('div[class^="ncm-container"]').remove();`;
+    script += `document.querySelector('div[class^="overlay"]').remove();`;
+    script += `document.querySelector('newsletter-campaign').remove();`;
+    script += `document.querySelector('metering-bottompanel').remove();`;
+  }
+
+  // sfchronicle
+  if (url.indexOf("sfchronicle.com") > -1) {
+    script += `document.querySelector('div[class^="fancybox-overlay"]').remove();`;
+  }
+
     // OpenAir
     if (url.indexOf("openair.com") > -1) {
       script += `document.querySelector('div[class^="lockOverlay"]').remove();`;
